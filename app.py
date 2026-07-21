@@ -6,7 +6,7 @@ genai.configure(api_key="GEMINI_API_KEY")
 model = genai.GenerativeModel("gemini-1.5-flash")
 st.set_page_config(page_title="AI Learning Buddy", page_icon="🎓🎓")
 st.title("🎓🎓 AI Learning Buddy")
-topic = st.text_input("End to end machine learning")
+topic = st.text_input("Enter a topic")
 option = st.selectbox(
     "Choose Activity",
     [
@@ -29,5 +29,8 @@ if st.button("Generate"):
             prompt = f"Create 5 MCQs on {topic} with answers."
         else:
             prompt = topic
-        response = model.generate_content(prompt)
+try:
+        response=model.generate_content(prompt)
         st.write(response.text)
+except Exception as e:
+    st.error(f"Error: {e}")
