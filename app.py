@@ -29,6 +29,8 @@ if st.button("Generate"):
             prompt = f"Create 5 MCQs on {topic} with answers."
         else:
             prompt = topic
+
+        
 try:
         response=model.generate_content(prompt)
         st.write(response.text)
