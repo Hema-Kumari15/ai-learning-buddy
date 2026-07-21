@@ -3,7 +3,7 @@ import streamlit as st
 import google.generativeai as genai
 # Configure Gemini API
 genai.configure(api_key="GEMINI_API_KEY")
-model = genai.GenerativeModel("gemini-2.5-flash")
+model = genai.GenerativeModel("gemini-1.5-flash")
 st.set_page_config(page_title="AI Learning Buddy", page_icon="🎓🎓")
 st.title("🎓🎓 AI Learning Buddy")
 topic = st.text_input("End to end machine learning")
