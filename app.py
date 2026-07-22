@@ -16,7 +16,7 @@ option = st.selectbox(
         "Ask Anything"
     ]
 )
-
+try: prompt
 if st.button("Generate"):
     if topic == "":
         st.warning("Please enter a topic.")
